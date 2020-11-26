@@ -10,6 +10,7 @@ There are several commands that you can use:
 * PSH your command
 * SCAN tcp ip port1 port2 port3
 * ASM bytecode
+* INJECT_SC PID bytecode
 * PIPES_LS
 
 That way you can launch a meterpreter directly into memory.
