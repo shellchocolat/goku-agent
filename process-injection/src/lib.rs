@@ -91,7 +91,15 @@ pub fn ptrace_inject(pid: i32, shellcode: Vec<u8>, len_shellcode: usize) -> std:
 }
 
 #[cfg(windows)]
-pub fn ptrace_inject(_pid: i32, _shellcode: Vec<u8>, _len_shellcode: usize) -> std::io::Result<bool> {
+pub fn remote_inject(_pid: i32, _shellcode: Vec<u8>, _len_shellcode: usize) -> std::io::Result<bool> {
+    // openProcess
+
+    // virtualAllocEx
+
+    // writeProcessMemory
+
+    // createRemoteThread
+
     let success: bool = false;
     Ok(success)
 }
