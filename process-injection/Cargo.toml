@@ -10,7 +10,7 @@ libc = "0.2"
 nix = "0.19.0"
 
 [target.'cfg(windows)'.dependencies]
-winapi = { version = "0.3", features = ["winnt", "memoryapi", "minwindef", "processthreadsapi"] }
+winapi = { version = "0.3", features = ["winnt", "memoryapi", "minwindef", "processthreadsapi", "winuser", "handleapi"] }
 
 [profile.release]
 opt-level = 'z' # optimize for size

@@ -56,9 +56,9 @@ pub fn inject_sc(cmd_arg: String) -> (String, String) {
     let process_pid = iter.next(); // the process PID in which to inject
     let shellcode = iter.next(); // the shellcode to inject
 
-    let pid: i32 = match process_pid {
-        None => {std::process::id() as i32},
-        Some(pid) => {<i32 as FromStr>::from_str(pid).unwrap()},
+    let pid: u32 = match process_pid {
+        None => {std::process::id() as u32},
+        Some(pid) => {<u32 as FromStr>::from_str(pid).unwrap()},
     };
 
 
