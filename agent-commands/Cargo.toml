@@ -1,0 +1,25 @@
+[package]
+name = "agent-commands"
+version = "0.1.0"
+authors = ["shellchocolat <shell@chocolat>"]
+edition = "2018"
+
+[dependencies]
+hex = "0.4.2"
+serde = {version = "1.0", features = ["derive"] }
+serde_derive = "1.0"
+serde_json = "1.0"
+snailquote = "0.3.0"
+winapi = { version = "0.3.9", features = ["wingdi", "winuser", "libloaderapi", "combaseapi", "objbase", "shobjidl", "winerror", "namedpipeapi", "fileapi"] }
+wmi = "0.6.0"
+
+[profile.release]
+opt-level = 'z' # optimize for size
+codegen-units = 1
+
+[dependencies.memory-map]
+path = "../memory-map"
+
+
+[dependencies.process-injection]
+path = "../process-injection"

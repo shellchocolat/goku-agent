@@ -1,0 +1,46 @@
+[package]
+name = "goku-agent"
+version = "0.1.0"
+authors = ["shellchocolat <shell@chocolat>"]
+edition = "2018"
+
+[dependencies]
+base64 = "0.12.3"
+chrono = { version = "0.4", features = ["serde"] }
+clap = "2.33.3"
+dotenv = "0.15.0"
+env_logger = "0.7.1"
+futures = "0.3.0"
+hex = "0.4.2"
+http = "0.2.1"
+log = "^0.4"
+mobc = "0.5"
+mobc-postgres = { version = "0.5", features = ["with-chrono-0_4"] }
+rand = "0.7.3"
+reqwest = { version = "0.10.8", features = ["blocking", "json", "default-tls", "rustls-tls", "native-tls"] }
+serde = {version = "1.0", features = ["derive"] }
+serde_derive = "1.0"
+serde_json = "1.0"
+socket2 = { version = "0.3.8" }
+snailquote = "0.3.0"
+thiserror = "1.0"
+tokio = { version = "0.2", features = ["macros", "rt-threaded"] }
+uuid = { version = "0.4", features = ["serde", "v4"] }
+warp = "0.2"
+winapi = { version = "0.3.9", features = ["wingdi", "winuser", "libloaderapi", "combaseapi", "objbase", "shobjidl", "winerror", "namedpipeapi", "fileapi"] }
+ws = "0.9.1"
+
+[profile.release]
+opt-level = 'z' # optimize for size
+codegen-units = 1
+
+[dependencies.agent-commands]
+path = "agent-commands"
+
+[[bin]]
+name = "goku_tcp"
+path = "src/goku_tcp/main.rs"
+
+
+
+

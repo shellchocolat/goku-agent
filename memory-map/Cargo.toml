@@ -1,0 +1,18 @@
+[package]
+name = "memory-map"
+version = "0.1.0"
+authors = ["shellchocolat <shell@chocolat>"]
+edition = "2018"
+readme = "README.md"
+description = """
+map bytecodes into memory
+"""
+
+[dependencies]
+#libc = "0.2.79"
+libc = "0.1.6"
+tempdir = "0.3.7"
+
+[profile.release]
+opt-level = 'z' # optimize for size
+codegen-units = 1
