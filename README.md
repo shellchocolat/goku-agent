@@ -52,5 +52,5 @@ $ rustup target add x86_64-pc-windows-gnu
 
 Then:
 ```
-cargo build  --target x86_64-pc-windows-gn
+cargo build  --target x86_64-pc-windows-gnu
 ```
